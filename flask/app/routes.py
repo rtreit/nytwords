@@ -13,7 +13,7 @@ with open("unique_letter_word_dictionary.json") as f:
 @app.route('/index')
 def index():
     if "word" in request.args:
-        original_word = request.args.get("word")
+        original_word = request.args.get("word").strip()
         word = original_word.lower()
         word_length_string = 0        
         if ''.join(sorted(set(word))) in word_dictionary.keys():
@@ -29,7 +29,7 @@ def index():
             """                            
             for word in words:
                 render_string = f"""
-                <li><i>{word}</i></li>{render_string}"""
+                <li><i><a href="https://www.thefreedictionary.com/{word}">{word}</a></i></li>{render_string}"""
             return render_template("index.html" , content=f"{intro_string}{render_string}")
         else:
             intro_string = f"""
