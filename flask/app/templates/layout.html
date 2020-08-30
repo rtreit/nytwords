@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+  html, body {
+      height: 100%;
+      max-width: 95%;
+      margin: auto;
+  }
+  .input {
+    width: 100%;
+    border-style: solid;
+    border-color: #b9b9b9;
+    padding-left: 5px;
+  }
+
+  ul.cardlist {
+    list-style: none;
+    width:100%;
+    padding:20px;
+    border: #cccccc solid 1px;
+    margin-bottom:5px;
+    background: #e6e6e6;
+
+  }
+</style>
+  <head>
+    <title>Word Solver v0.1</title>
+  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  
+  <div id= "main" class="w3-container">
+    <div class="w3-card-4">
+      <div class="w3-container w3-blue">
+        <h2>Word Solver</h2>
+      </div>
+      <form class="w3-container" action="/" method="get">
+        <p>
+        <input class="input" type="text" id="sha2" name="word" placeholder="Enter some letters" >       
+      </p> 
+      <p><button id="submit" class="w3-btn w3-green" onclick="clicked_on()">Submit</button></p>
+      </form>
+      <div class="w3-container">
+        {% block content %}
+        {% endblock %}          
+      </div>
+    </div>
+  </div>
+</html>
